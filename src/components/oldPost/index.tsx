@@ -4,9 +4,7 @@ import { useEffect, useState } from "react";
 import * as S from "./styles";
 
 const OldPost: React.FC = () => {
-  const [posts, setPosts] = useState<Array<object> | null>(null);
-  const [title, setTitle] = useState("");
-  const [text, setText] = useState("");
+  const [posts, setPosts] = useState<Array<object>>([]);
 
   async function getOldPost() {
     const data = await getPosts();
@@ -15,14 +13,13 @@ const OldPost: React.FC = () => {
 
   useEffect(() => {
     getOldPost();
+    console.log(posts);
   }, []);
 
   return (
     <S.SectionPosts>
-      {posts?.map((post,index) => {
-        return (
-          <ContainerPost key={index} title={post.title} text={post.text} />
-        );
+      {posts.map((post: any,index: number) => {
+        return <ContainerPost key={index} title={post.title} text={post.text} />;
       })}
     </S.SectionPosts>
   );
