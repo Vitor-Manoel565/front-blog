@@ -3,12 +3,13 @@ import styled from 'styled-components';
 export const Container = styled.div`
     display: flex;
     flex-direction: column;
-    width: 80%;
+    justify-content: center;
+    width: 70%;
+    height: 500px;
     gap: 1rem;
     background-color: gray;
     padding: 10px;
-    overflow-y: auto;
-    overflow-x: hidden;
+
 `;
 
 export const InputTitlePost = styled.input`
@@ -51,3 +52,11 @@ export const ButtonPost = styled.button`
     cursor: pointer;
 `;
 
+export const ContainerForm = styled.div`
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 10px;
+`;

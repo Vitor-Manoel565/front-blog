@@ -1,13 +1,13 @@
-import styled from 'styled-components';
+import  styled  from  "styled-components" ;
 
-
-export const Container = styled.div`
+export const Main = styled.main`
     display: flex;
     flex-direction: column;
+    align-items: center;
+    justify-content: center;
     width: 100%;
-    height: 50%;
-    background-color: gray;
-    padding: 10px;
-    overflow-y: auto;
-    overflow-x: hidden;
+    padding: 20px;
+    gap: 2rem;
+    padding: 20px;
+    height: auto;
 `;
