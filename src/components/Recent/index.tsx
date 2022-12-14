@@ -6,11 +6,15 @@ import * as S from "./styles";
 const ContainerRecent: React.FC = () => {
   const [posts, setPosts] = useState<object>({});
   const [LastPost, setLastPost] = useState<object | string>('');
+  const [title, setTitle] = useState("");
+  const [text, setText] = useState("");
 
   async function filterLastPost() {
     const data = await getPosts();
     const lastPost = data[data.length - 1];
     setLastPost(lastPost);
+    setTitle(lastPost.title);
+    setText(lastPost.text);
   }
   useEffect(() => {
     filterLastPost();
@@ -19,7 +23,7 @@ const ContainerRecent: React.FC = () => {
 
   return (
     <S.Main>
-      <ContainerPost title={LastPost?.title} text={LastPost?.text} />
+      <ContainerPost title={title} text={text} />
     </S.Main>
  
   );

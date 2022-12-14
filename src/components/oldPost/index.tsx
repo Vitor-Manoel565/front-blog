@@ -5,6 +5,8 @@ import * as S from "./styles";
 
 const OldPost: React.FC = () => {
   const [posts, setPosts] = useState<Array<object> | null>(null);
+  const [title, setTitle] = useState("");
+  const [text, setText] = useState("");
 
   async function getOldPost() {
     const data = await getPosts();
@@ -17,9 +19,9 @@ const OldPost: React.FC = () => {
 
   return (
     <S.SectionPosts>
-      {posts?.map((post) => {
+      {posts?.map((post,index) => {
         return (
-          <ContainerPost key={post?._id} title={post?.title} text={post?.text} />
+          <ContainerPost key={index} title={post.title} text={post.text} />
         );
       })}
     </S.SectionPosts>
